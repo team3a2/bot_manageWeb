@@ -140,12 +140,12 @@ def get_money_order_status_is_pending():
 
 
 def action_accept_or_reject_order_money(action , _id):
+    
     endpoint = ''
     if action == 'accept':
         endpoint = f'api/deposit/confirm/{_id}'
     elif action =='reject':
         endpoint = f'api/deposit/reject/{_id}'
-
     response = api.put(endpoint)
     return response
 def send_money_order_to_ADMIN():
@@ -238,4 +238,4 @@ def handle_callback_query(call):
         # bot.send_message(call.message.chat.id, "Bạn đã từ chối yêu cầu.")
     bot.delete_message(call.message.chat.id, call.message.message_id)
 
-bot.polling()
+bot.infinity_polling(timeout=10, long_polling_timeout = 5)
