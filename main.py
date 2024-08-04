@@ -208,9 +208,16 @@ def send_welcome(message):
 
 @bot.message_handler(func=lambda message: True)
 def handle_message(message):
-
+    global CHAT_ID_ADMIN
     if message.text.lower() == 'id': return bot.reply_to(message, message.chat.id) 
-
+    if message.text.startswith('/changeid'):
+        new_id = message.text.split()[1]
+        try:
+            test_id = 10 + new_id
+            CHAT_ID_ADMIN = new_id
+            bot.reply_to(message, "Đã thay ID chat thành công!")
+        except ValueError:
+            bot.reply_to(message, "ID chat phải là một số!")
 
 
 # Khởi chạy bot
