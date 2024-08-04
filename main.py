@@ -4,19 +4,19 @@ from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 API_TOKEN = '6996993496:AAFJwET1MnlWoViuCHb4__Ze_Z-5YOkWJgc'
 
 
-# from flask import Flask,render_template
-# from threading import Thread
-# app = Flask(__name__)
-# @app.route('/')
-# def index():
-#     return "Alive"
-# def run():
-#   app.run(host='0.0.0.0',port=8080)
-# def keep_alive():  
-#     t = Thread(target=run)
-#     t.start()
+from flask import Flask,render_template
+from threading import Thread
+app = Flask(__name__)
+@app.route('/')
+def index():
+    return "Alive"
+def run():
+  app.run(host='0.0.0.0',port=8080)
+def keep_alive():  
+    t = Thread(target=run)
+    t.start()
 
-# keep_alive()
+keep_alive()
 # Tạo bot
 bot = telebot.TeleBot(API_TOKEN)
 
