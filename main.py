@@ -1,7 +1,7 @@
 import requests, threading, telebot, time
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 # Telegram Bot Token và chat_id
-API_TOKEN = '6996993496:AAFJwET1MnlWoViuCHb4__Ze_Z-5YOkWJgc'
+API_TOKEN = '6525705295:AAGaoXer8twK9ZpvUDXyWVclGA3WD6ioH-0'
 
 
 from flask import Flask,render_template
